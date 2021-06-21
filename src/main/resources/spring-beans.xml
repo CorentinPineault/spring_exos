@@ -36,4 +36,8 @@
         <property name="dev" ref="developerBean2"></property>
     </bean>
 
+    <bean id="serviceBean" scope="prototype" class="com.example.demo.Service">
+        <property name="message" value="X"></property>
+    </bean>
+
 </beans>

@@ -19,6 +19,11 @@ public class DemoApplication {
 		Company company = (Company) cxt.getBean("companyBean");
 		System.out.println(company.toString());
 
+		Service service = (Service) cxt.getBean("serviceBean");
+		service.setMessage("Hello");
+		service = (Service) cxt.getBean("serviceBean");
+		System.out.println(service.getMessage());
+
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
