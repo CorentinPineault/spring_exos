@@ -19,4 +19,21 @@
         <constructor-arg value="Bibus le grand" type="java.lang.String"/>
 
     </bean>
+
+    <bean id="developerBean2" class="com.example.demo.Developer">
+        <property name="nom" value="Mickael"></property>
+        <property name="nbAnneesXp" value="4"></property>
+    </bean>
+
+    <bean id="developerBean1" class="com.example.demo.Developer">
+        <property name="nom" value="Billy"></property>
+        <property name="nbAnneesXp" value="12"></property>
+    </bean>
+
+    <bean id="companyBean" class="com.example.demo.Company">
+        <property name="nom" value="Boris company"></property>
+        <property name="cp" ref="developerBean1"></property>
+        <property name="dev" ref="developerBean2"></property>
+    </bean>
+
 </beans>

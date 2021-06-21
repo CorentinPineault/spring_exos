@@ -15,6 +15,10 @@ public class DemoApplication {
 		FoodPantry f2 = (FoodPantry) cxt.getBean("bean2");
 		System.out.println(f1.toString());
 		System.out.println(f2.toString());
+
+		Company company = (Company) cxt.getBean("companyBean");
+		System.out.println(company.toString());
+
 		SpringApplication.run(DemoApplication.class, args);
 	}
 

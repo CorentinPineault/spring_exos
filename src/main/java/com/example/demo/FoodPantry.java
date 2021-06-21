@@ -8,6 +8,7 @@ public class FoodPantry {
     private Float water;
 
     public FoodPantry(String address, int nbCans, int nbBreads, String owner, Float water) {
+
         this.address = address;
         this.nbCans = nbCans;
         this.nbBreads = nbBreads;
