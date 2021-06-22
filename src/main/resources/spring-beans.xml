@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="bean1" class="com.example.demo.FoodPantry">
+    <context:annotation-config/>
+
+    <bean id="bean1" class="com.example.demo.models.FoodPantry">
         <constructor-arg value="Euratechnologies, Lille 59000" type="java.lang.String" index="0"/>
         <constructor-arg value="30" type="int" index="1"/>
         <constructor-arg value="30" type="int" index="2"/>
@@ -11,7 +15,7 @@
         <constructor-arg value="34.3f" type="java.lang.Float" index="4"/>
     </bean>
 
-    <bean id="bean2" class="com.example.demo.FoodPantry">
+    <bean id="bean2" class="com.example.demo.models.FoodPantry">
         <constructor-arg value="340.3f" type="java.lang.Float"  index="4"/>
         <constructor-arg value="Euratechnologies, Lille 59000" type="java.lang.String" index="0"/>
         <constructor-arg value="344440" type="int" index="2"/>
@@ -20,24 +24,19 @@
 
     </bean>
 
-    <bean id="developerBean2" class="com.example.demo.Developer">
+    <bean id="developerBean2" class="com.example.demo.models.Developer">
         <property name="nom" value="Mickael"></property>
         <property name="nbAnneesXp" value="4"></property>
     </bean>
 
-    <bean id="developerBean1" class="com.example.demo.Developer">
+    <bean id="developerBean1" class="com.example.demo.models.Developer">
         <property name="nom" value="Billy"></property>
         <property name="nbAnneesXp" value="12"></property>
     </bean>
 
-    <bean id="companyBean" class="com.example.demo.Company">
+    <bean id="companyBean" class="com.example.demo.models.Company">
         <property name="nom" value="Boris company"></property>
         <property name="cp" ref="developerBean1"></property>
         <property name="dev" ref="developerBean2"></property>
     </bean>
-
-    <bean id="serviceBean" scope="prototype" class="com.example.demo.Service">
-        <property name="message" value="X"></property>
-    </bean>
-
 </beans>

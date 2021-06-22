@@ -1,8 +1,19 @@
-package com.example.demo;
+package com.example.demo.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+@Component("company")
 public class Company {
+
+    @Value("Boris company")
     private String nom;
+
+    @Autowired
     private Developer cp;
+
+    @Autowired
     private Developer dev;
 
     public Company(String nom, Developer cp, Developer dev) {
